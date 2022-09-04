@@ -14,5 +14,5 @@ int main(){
             impl++;
         }
     }
-    cout << impl;
+    cout << impl << endl;
 }
