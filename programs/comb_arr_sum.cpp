@@ -8,6 +8,29 @@ using namespace std;
 //        --> 1 3 5
 //        --> 2 3 4
 
+void usingBits(int arr[], int n, int sum){
+    int temp_sum, c = 0;
+    for (int i = 1; i < (1 << n); i++){
+        temp_sum = 0;
+        for (int j = 0; j < n; j++){
+            if (i & (1 << j)){
+                temp_sum += arr[j];
+            }
+        }
+        if (temp_sum == sum){
+            c++;
+            cout << "--> ";
+            for (int j = 0; j < n; j++){
+                if (i & (1 << j)){
+                    cout << arr[j] << ' ';
+                }
+            }
+            cout << endl;
+        }
+    }
+    if (c == 0) cout << "=> Found " << c << " possible combination" << endl;
+}
+
 int Combination(int a[], int reqLen, int start, int currLen, bool check[], int len, int sum){
     int c = 0, temp_sum;
 	if(currLen > reqLen) return c;
@@ -50,8 +73,10 @@ int main(){
         check[i] = false;
     }
 
-    for(i = 1; i <= n; i++){
-		c += Combination(arr, i, 0, 0, check, n, sum);
-	}
-    if (c == 0) cout << "=> Found " << c << " possible combination" << endl;
+    // for(i = 1; i <= n; i++){
+	// 	c += Combination(arr, i, 0, 0, check, n, sum);
+	// }
+    // if (c == 0) cout << "=> Found " << c << " possible combination" << endl;
+
+    usingBits(arr, n, sum);
 }
