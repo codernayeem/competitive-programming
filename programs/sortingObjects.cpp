@@ -15,26 +15,22 @@ class Person{
         void printDetails(){
             cout << "Name : " << this->name << "\t Age : " << this->age << "\t Salary : " << this->salary << endl;
         }
+
+        bool operator > (Person &p){
+            return this->age > p.age;
+        }
+
+        bool operator < (Person &p){
+            return this->age < p.age;
+        }
 };
 
 void selectionSortPersonsByAge(Person persons[], int n){
     int i, j;
     for (i = 0; i < n; i++){
         for (j = i+1; j < n; j++){
-            if (persons[j].age < persons[i].age){
+            if (persons[j].age < persons[i].age)
                 swap(persons[j], persons[i]);
-            }
-        }
-    }
-}
-
-void selectionSortPersonsBySalary(Person persons[], int n){
-    int i, j;
-    for (i = 0; i < n; i++){
-        for (j = i+1; j < n; j++){
-            if (persons[j].salary < persons[i].salary){
-                swap(persons[j], persons[i]);
-            }
         }
     }
 }
@@ -43,11 +39,14 @@ void selectionSortPersonsByName(Person persons[], int n){
     int i, j;
     for (i = 0; i < n; i++){
         for (j = i+1; j < n; j++){
-            if (persons[j].name < persons[i].name){
+            if (persons[j].name < persons[i].name)
                 swap(persons[j], persons[i]);
-            }
         }
     }
+}
+
+bool comparePersonSalary(Person &p1, Person &p2){
+    return p1.salary < p2.salary;
 }
 
 int main()
@@ -68,8 +67,7 @@ int main()
     for (int i = 0; i < c; i++) persons[i].printDetails();
     cout << "-----------------------------------------------" << endl;
 
-    // sorting ages
-    // sort(persons, persons + c); // will not work
+    // sorting
 
     selectionSortPersonsByName(persons, c);
     for (int i = 0; i < c; i++) persons[i].printDetails();
@@ -78,8 +76,13 @@ int main()
     selectionSortPersonsByAge(persons, c);
     for (int i = 0; i < c; i++) persons[i].printDetails();
     cout << "-----------------------------------------------" << endl;
-
-    selectionSortPersonsBySalary(persons, c);
+    
+    sort(persons, persons+c); // will work if we do operator overlodding
     for (int i = 0; i < c; i++) persons[i].printDetails();
     cout << "-----------------------------------------------" << endl;
+
+    sort(persons, persons+c, comparePersonSalary);
+    for (int i = 0; i < c; i++) persons[i].printDetails();
+    cout << "-----------------------------------------------" << endl;
+
 }
