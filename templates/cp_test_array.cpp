@@ -1,16 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    int t, n;
+void testCase(){
+    int n;
+    cin >> n;
+
+    int arr[n];
+    for (int j = 0; j < n; j++) cin >> arr[j];
+
+    // task
+
+    cout << endl; 
+}
+
+signed main(){
+    int t;
     cin >> t;
-
-    for (int i = 0; i < t; i++){
-        cin >> n;
-
-        int arr[n];
-        for (int j = 0; j < n; j++) cin >> arr[j];
-        
-    }
+    for (; t; t--)
+        testCase();
 }
