@@ -4,8 +4,7 @@ using namespace std;
 
 // 1000A (1000)
 
-signed main()
-{
+void testCase(){
     int n;
     cin >> n;
 
@@ -13,6 +12,12 @@ signed main()
     for (int i = 0; i < n; i++) cin >> arr[i];
 
     // TODO
-    
-    cout << n << endl;
+
+    cout << n << endl; 
+}
+
+signed main(){
+    int t;
+    cin >> t;
+    while(t--) testCase();
 }
