@@ -1,18 +1,19 @@
 #include <iostream>
 // #include <bits/stdc++.h>
+#define FAST ios_base::sync_with_stdio(0); cin.tie(0);
+#define endl "\n"
+typedef long long ll;
 using namespace std;
 
-// 1000A (1000)
-
-signed main()
-{
-    int t;
+int main(){
+    FAST
+    int t, n;
     cin >> t;
-    
-    while(t--){
-        int n;
-        cin >> n;
 
+    while(t--){
+        cin >> n;
+        // task
         cout << n << endl;
     }
+    return 0;
 }

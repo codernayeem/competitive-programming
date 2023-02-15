@@ -1,8 +1,9 @@
 #include <iostream>
 // #include <bits/stdc++.h>
+#define FAST ios_base::sync_with_stdio(0); cin.tie(0);
+#define endl "\n"
+typedef long long ll;
 using namespace std;
-
-// 1000A (1000)
 
 void testCase(){
     int n;
@@ -17,7 +18,9 @@ void testCase(){
 }
 
 signed main(){
+    FAST
     int t;
     cin >> t;
     while(t--) testCase();
+    return 0;
 }
