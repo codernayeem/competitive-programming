@@ -1,8 +1,12 @@
 #include<iostream>
 #include<limits.h>
+#define FAST ios_base::sync_with_stdio(0); cin.tie(0);
+#define endl "\n"
+typedef long long ll;
 using namespace std;
 
 int main(){
+    FAST
     int t, n, x, min_1, min_2;
 
     cin >> t;

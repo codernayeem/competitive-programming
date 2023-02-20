@@ -1,17 +1,12 @@
 #include<iostream>
+#include<algorithm>
+#define FAST ios_base::sync_with_stdio(0); cin.tie(0);
+#define endl "\n"
+typedef long long ll;
 using namespace std;
 
-int gcd(int x, int y){
-    if(x<y) swap(x, y);
-    while (y != 0) {
-        int mod = x % y;
-        x = y;
-        y = mod;
-    }
-    return x;
-}
- 
 int main(){
+    FAST
     int t, n, q;
     cin >> t;
     
@@ -24,12 +19,12 @@ int main(){
 
         for(int i = 1; i<n; i++){
             cin >> arr[i];
-            pre_gcd[i] = gcd(pre_gcd[i-1], arr[i]);
+            pre_gcd[i] = __gcd(pre_gcd[i-1], arr[i]);
         }
 
         post_gcd[n-1] = arr[n-1];
         for(int i = n-2; i>=0; i--){
-            post_gcd[i] = gcd(post_gcd[i+1], arr[i]);
+            post_gcd[i] = __gcd(post_gcd[i+1], arr[i]);
         }
 
         int L, R;
@@ -37,8 +32,8 @@ int main(){
             cin >> L >> R;
             if (L==1) cout << post_gcd[R];
             else if (R==n) cout << pre_gcd[L-2];
-            else cout << gcd(post_gcd[R], pre_gcd[L-2]);
-            printf("\n");
+            else cout << __gcd(post_gcd[R], pre_gcd[L-2]);
+            cout << endl;
         }
     }
     return 0;
