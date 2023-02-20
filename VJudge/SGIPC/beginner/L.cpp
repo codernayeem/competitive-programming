@@ -1,21 +1,25 @@
 #include<iostream>
+#define FAST ios_base::sync_with_stdio(0); cin.tie(0);
+#define endl "\n"
+typedef long long ll;
 using namespace std;
 
 int main(){
+    FAST
     int t, n;
     cin >> t;
     while(t--){
         cin >> n;
-        cout << 2 << "\n";
+        cout << 2 << endl;
 
         if(n==2){
-            printf("1 2\n");
+            cout << "1 2\n";
             continue;
         }
-        printf("%d %d\n%d %d\n", n-2, n, n-1, n-1);
+        cout << n-2 << ' ' << n << '\n' << n-1 << ' ' << n-1 << '\n'; 
 
         for(int i = n-1; i>=3; i--){
-            printf("%d %d\n", i-2, i);
+            cout << i-2 << ' ' << i << '\n'; 
         }
     }
     return 0;

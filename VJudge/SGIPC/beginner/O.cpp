@@ -1,7 +1,11 @@
 #include<iostream>
+#define FAST ios_base::sync_with_stdio(0); cin.tie(0);
+#define endl "\n"
+typedef long long ll;
 using namespace std;
- 
+
 int main(){
+    FAST
     int r1, r2, c1, c2, d1, d2, a, b, c, d;
     cin >> r1 >> r2 >> c1 >> c2 >> d1 >> d2;
     

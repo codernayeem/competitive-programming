@@ -1,11 +1,11 @@
 #include<iostream>
+#define FAST ios_base::sync_with_stdio(0); cin.tie(0);
+#define endl "\n"
+typedef long long ll;
 using namespace std;
 
-int minimum(int x, int y){
-    return (x>y) ? y : x;
-}
-
 int main(){
+    FAST
     int t, n, x;
     cin >> t;
     while (t--){
@@ -26,7 +26,7 @@ int main(){
 
         if (sum%x) cout << n;
         else if(first == n && last == n) cout << -1;
-        else cout << n-1-minimum(first, last);
+        else cout << n-1-min(first, last);
         cout << "\n";
     }
     return 0;
